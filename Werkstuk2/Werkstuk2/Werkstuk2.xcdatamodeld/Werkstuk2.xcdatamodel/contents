@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Fields" representedClassName="Fields" syncable="YES" codeGenerationType="class">
+        <attribute name="geo_point_2d_lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="geo_point_2d_long" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="level_of_service" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="geo_shape" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeoShape" inverseName="fields" inverseEntity="GeoShape" syncable="YES"/>
+        <relationship name="record" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Record" inverseName="fields" inverseEntity="Record" syncable="YES"/>
+    </entity>
+    <entity name="Geometry" representedClassName="Geometry" syncable="YES" codeGenerationType="class">
+        <attribute name="coordinates_lat" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="coordinates_long" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="record" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Record" inverseName="geometry" inverseEntity="Record" syncable="YES"/>
+    </entity>
+    <entity name="GeoShape" representedClassName="GeoShape" syncable="YES" codeGenerationType="class">
+        <attribute name="coordinates" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fields" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fields" inverseName="geo_shape" inverseEntity="Fields" syncable="YES"/>
+    </entity>
+    <entity name="Record" representedClassName="Record" syncable="YES" codeGenerationType="class">
+        <attribute name="datasetid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="record_timestamp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fields" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fields" inverseName="record" inverseEntity="Fields" syncable="YES"/>
+        <relationship name="geometry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Geometry" inverseName="record" inverseEntity="Geometry" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Record" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Fields" positionX="-36" positionY="36" width="128" height="135"/>
+        <element name="GeoShape" positionX="-18" positionY="45" width="128" height="90"/>
+        <element name="Geometry" positionX="0" positionY="99" width="128" height="105"/>
+    </elements>
+</model>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Werkstuk2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0lH-mu-6Gj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OGJ-Mt-HGT"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFP-yu-5Ou">
+                                <rect key="frame" x="127" y="545" width="120" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refresh_button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CI0-As-9cl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0lH-mu-6Gj" firstAttribute="centerX" secondItem="AFP-yu-5Ou" secondAttribute="centerX" id="12A-3C-xrz"/>
+                            <constraint firstItem="0lH-mu-6Gj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="2WE-dm-D4t"/>
+                            <constraint firstItem="0lH-mu-6Gj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DFl-b9-b06"/>
+                            <constraint firstAttribute="trailing" secondItem="0lH-mu-6Gj" secondAttribute="trailing" id="I9p-Fb-GbK"/>
+                            <constraint firstItem="0lH-mu-6Gj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bQk-YR-gUr"/>
+                            <constraint firstItem="AFP-yu-5Ou" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="k5s-g2-KlA"/>
+                            <constraint firstItem="AFP-yu-5Ou" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="525" id="xpz-WV-03Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="0lH-mu-6Gj" id="bRm-xV-CTq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
